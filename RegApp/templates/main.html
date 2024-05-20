@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}Welcome!!!{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-0 offset-md-0">
+            <h1 class="text-center">Welcome to the Registration App</h1>
+            <p class="text-flex">Welcome to Jomo Kenyatta University of Agriculture and Technology (JKUAT), where your academic journey begins! We are delighted to extend a warm welcome to all prospective students considering joining our vibrant and dynamic community. At JKUAT, we pride ourselves on fostering an environment where innovation thrives, excellence is nurtured, and dreams are realized. Whether you're passionate about cutting-edge research, hands-on learning experiences, or building lifelong connections, JKUAT offers the platform for you to flourish. Our dedicated faculty, world-class facilities, and comprehensive support services are here to guide you on your path to success. Embrace the opportunity to challenge yourself, explore new horizons, and shape your future at JKUAT. Join us in our commitment to knowledge, growth, and excellence. Apply now and embark on an extraordinary journey with JKUAT!</p>
+            <a class="btn btn-sm btn-outline-secondary" href="/register/">Register here</a>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    <!-- // write a function using script tag to make the h1 tag change color when clicked add a listener to the h1 tag -->
+    <script>
+        document.querySelector('h1').addEventListener('click', function(){
+            this.style.color = 'red';
+        });
+    </script>
+{% endblock %}

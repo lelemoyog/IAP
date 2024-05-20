@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block title %}Registered users{% endblock %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-0 offset-md-0">
+        <h1 class="text-center">Registered Users</h1>
+        <table class="table" id="editableTable">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Index</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name}}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.index }}</td>
+                    <td>
+                        <a href="deleteUser/{{user.id}}/" class="delete-icon" "><i class="fas fa-trash"></i></a>
+                        <a   href="editUser/{{user.id}}/"class="edit-icon" ><i class="fas fa-edit"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.getElementById("editableTable").addEventListener("click", function() {
+        var rows = document.getElementById("editableTable").rows;
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].cells;
+            for (var j = 0; j < cells.length-1; j++) {
+                cells[j].contentEditable = true;
+            }
+        }
+    });
+</script>
+    
+{% endblock %}
